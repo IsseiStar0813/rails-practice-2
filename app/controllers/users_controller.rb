@@ -8,12 +8,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # 登録成功時
-      redirect_to @user
     else
       # 登録失敗時
       render "new"
     end
-      　  
   end
   
   def show
