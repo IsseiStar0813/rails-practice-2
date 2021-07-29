@@ -2,3 +2,8 @@ issei:
   name: IsseiStar
   email: issei.s.star@icloud.com
   password_digest: <%= User.digest('password') %>
+  
+yuuka:
+  name: YuukaStar
+  email: yuuka.s.star@icloud.com
+  password_digest: <%= User.digest("password") %>
