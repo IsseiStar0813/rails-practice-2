@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       # 更新成功
       flash[:success] = "ユーザー情報を更新しました"
+      redirect_to @user
     else
       # 更新失敗
       render "edit"
