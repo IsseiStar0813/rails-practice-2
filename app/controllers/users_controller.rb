@@ -17,11 +17,22 @@ class UsersController < ApplicationController
     end
   end
   
-  def show
+  def edit
     @user = User.find(params[:id])
   end
   
-  def edit
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      # 更新成功
+      flash[:success] = "ユーザー情報を更新しました"
+    else
+      # 更新失敗
+      render "edit"
+    end
+  end
+  
+  def show
     @user = User.find(params[:id])
   end
   
