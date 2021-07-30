@@ -14,6 +14,7 @@ class UsersDeleteTest < ActionDispatch::IntegrationTest
    assert_difference 'User.count', -1 do
       delete user_path
     end
+   assert_not flash.empty?
    assert_redirected_to root_url
  end
 
