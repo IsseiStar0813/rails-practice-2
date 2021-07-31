@@ -1,2 +1,13 @@
 <h1>Profile</h1>
-<%= @user.name %> <%= @user.email %>
+<%= @user.name %>
+<% if @microposts.any? %>
+<%= @microposts.count %> Microposts
+<ol>
+  <% @microposts.each do |micropost| %>
+  <ul>
+    <%= micropost.content %>
+    <%= micropost.created_at %>
+  </ul>
+  <% end %> 
+</ol>
+<% end %>
