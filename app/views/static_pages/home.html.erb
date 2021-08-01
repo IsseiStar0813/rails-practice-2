@@ -1,5 +1,10 @@
 <% if session[:user_id] %>
-こんにちは
+
+<%= form_with(model: @micropost, local: true) do |f| %>
+  <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+<%= f.submit "Post"%>
+<% end %>
+
 <% else %>
 <h1>Welcome to Rails Practice!</h1>
 <p>Rails 学習中です</p>
