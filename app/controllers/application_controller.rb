@@ -9,11 +9,5 @@ class ApplicationController < ActionController::Base
       end
     end
     
-    # 正しいユーザーか確認
-    def correct_user
-      @user = User.find(params[:id])
-      unless @user == current_user
-        redirect_to login_url
-      end
-    end
+   
 end

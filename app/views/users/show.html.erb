@@ -4,10 +4,12 @@
 <%= @microposts.count %> Microposts
 <ol>
   <% @microposts.each do |micropost| %>
-  <ul>
+  <li>
     <%= micropost.content %>
     <%= micropost.created_at %>
-  </ul>
+    <%= link_to "delete", micropost, method: :delete, 
+    data:{ confirm: "削除しますか" } %>
+  </li>
   <% end %> 
 </ol>
 <% end %>
